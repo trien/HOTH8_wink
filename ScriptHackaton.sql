@@ -65,7 +65,6 @@ create table TUserComment(
 
 
 DELIMITER //
-
 CREATE PROCEDURE GetPointsPerUser(
 	IN idUser int,OUT points INT
 )
@@ -74,10 +73,42 @@ BEGIN
  	FROM  TUserPoints
 	WHERE idUser = idUser;
 END //
+DELIMITER ;
 
+idUser int,
+    iPoints int,
+    sOrigen varchar(255),
+    ddateCreation datetime,
+    idNeed int,
+    idEvent int,
+    
+DELIMITER //
+CREATE PROCEDURE GainPointsPerEvent(
+	IN idUser int,
+    in idEvent int,
+    in ipoints INT,
+    out estado bit
+)
+BEGIN
+   insert into TUserPoints(idUser,ipoints,idEvent,sOrigen)
+   values(idUser,iPoints,idEvent,'EVENT');
+END //
 DELIMITER ;
 
 DELIMITER //
+CREATE PROCEDURE GainPointsPerNeed(
+	IN idUser int,
+    in idNeed int,
+    in ipoints INT,
+    out estado bit
+)
+BEGIN
+   insert into TUserPoints(idUser,ipoints,idNeed,estado)
+   values(idUser,iPoints,idEvent,'NEED');
+END //
+DELIMITER ;
+
+ DELIMITER //
 CREATE PROCEDURE GetUsers()
 BEGIN
 	SELECT *  	FROM  TUser
