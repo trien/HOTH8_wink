@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "sNameEvent": "CARLOS BIRTHDAY EVENT",
+        "sInfoEvent": "The event will start at 05:00 pm and everybody is invited",
+        "dDateEvent": "07-02-2021",
+        "idUser": 1
+    },
+    {
+        "id": 2,
+        "sNameEvent": "CITY CARNVAL VIRTUAL MEETING",
+        "sInfoEvent": "The event will start at 04:00 pm and everybody is invited",
+        "dDateEvent": "12-02-2021",
+        "idUser": 2
+    },
+    {
+        "id": 3,
+        "sNameEvent": "LETS CELEBRATE PROJECT FINISH",
+        "sInfoEvent": "The event will start at 05:00 pm,\n    we gonna have some gifts",
+        "dDateEvent": "07-02-2021",
+        "idUser": 1
+    },
+    {
+        "id": 4,
+        "sNameEvent": "VALENTINES DAYS CELEBRATE FRIENDSHIP ",
+        "sInfoEvent": "The event will start at 06:00 pm we have chocolate",
+        "dDateEvent": "14-02-2021",
+        "idUser": 4
+    }
+]

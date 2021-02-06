@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1,
+        "semail": "jsmith@company.es",
+        "sLastName": "Smith",
+        "sFirstName": "John",
+        "sdatebirth": "01-01-1980",
+        "spassword": "123456",
+        "saddress": "Str Johannes 123",
+        "sPosition": "Finantial Manager",
+        "bActive": 1
+    },
+    {
+        "id": 2,
+        "semail": "cwhite@company.es",
+        "sLastName": "White",
+        "sFirstName": "Charles",
+        "sdatebirth": "01-01-1991",
+        "spassword": "123456",
+        "saddress": "Str Johannes 123",
+        "sPosition": "Analyst Finantial Junior I",
+        "bActive": 1
+    },
+    {
+        "id": 3,
+        "semail": "mjohnes@company.es",
+        "sLastName": "Johnes",
+        "sFirstName": "Marie",
+        "sdatebirth": "10-02-1983",
+        "spassword": "123456",
+        "saddress": "Str Johannes 123",
+        "sPosition": "Analyst Finantial Junior II",
+        "bActive": 1
+    },
+    {
+        "id": 4,
+        "semail": "cdiaz@company.es",
+        "sLastName": "Diaz",
+        "sFirstName": "Carlos",
+        "sdatebirth": "11-03-1986",
+        "spassword": "123456",
+        "saddress": "Str Johannes 123",
+        "sPosition": "Analyst Finantial Junior I",
+        "bActive": 1
+    },
+    {
+        "id": 5,
+        "semail": "atarrie@company.es",
+        "sLastName": "Tarrie",
+        "sFirstName": "Adrien",
+        "sdatebirth": "14-04-1989",
+        "spassword": "123456",
+        "saddress": "Str Johannes 123",
+        "sPosition": "Finantial Intership",
+        "bActive": 1
+    }
+]
