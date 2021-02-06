@@ -1,30 +1,31 @@
 use tienda;
+/*************************** Tables ***************************************/
+
 CREATE TABLE TUser (
-    idUser int NOT NULL,
+    idUser int NOT NULL AUTO_INCREMENT,
     sLastName varchar(255) NOT NULL,
     sFirstName varchar(255),
     sdatebirth datetime,
     spassword datetime,
     semail varchar(255),
     saddress varchar(255),
-    bActive bit,
+    bActive bit DEFAULT 1,
     PRIMARY KEY (idUser)
 );
 
 CREATE TABLE TSesion (
-    idSesion int NOT NULL,
-    dFechaLogin datetime,
+    idSesion int NOT NULL AUTO_INCREMENT,
+    dFechaLogin datetime DEFAULT CURRENT_TIMESTAMP,
     idUser int,
-    bActive bit,
+    bActive bit default 1,
     PRIMARY KEY (idSesion),
-    FOREIGN KEY (idUser)REFERENCES TUser(idUser)
+    FOREIGN KEY (idUser) REFERENCES TUser(idUser)
 );
 
-
 CREATE TABLE TEvent (
-    idEvent int NOT NULL,
+    idEvent int NOT NULL AUTO_INCREMENT,
     sSubject varchar(255) NOT NULL,
-    ddatecreation varchar(255),
+    ddatecreation datetime default CURRENT_TIMESTAMP,
     idUser int,
     PRIMARY KEY (idEvent),
     FOREIGN KEY (idUser)REFERENCES TUser(idUser)
@@ -34,10 +35,10 @@ CREATE TABLE TNeed (
     idNeed int NOT NULL,
     sheader varchar(255) NOT NULL,
     sbody varchar(255) NOT NULL,
-    ddateCreation datetime,
+    ddateCreation datetime default CURRENT_TIMESTAMP,
     idUserCreator int,
-    iValue int,
-    bstate bit,
+    iValue int default 2,
+    bstate bit not null default 1,
     PRIMARY KEY (idEvent),
     FOREIGN KEY (idUserCreator)REFERENCES TUser(idUser)
 );
@@ -46,7 +47,7 @@ create table TUserPoints(
     idUser int,
     iPoints int,
     sOrigen varchar(255),
-    ddateCreation datetime,
+    ddateCreation datetime default CURRENT_TIMESTAMP,
     idNeed int,
     idEvent int,
     FOREIGN KEY (idNeed)REFERENCES TUser(TNeed),
@@ -57,7 +58,7 @@ create table TUserComment(
     idUser int,
     idNeed int,
     sComentario varchar(255),
-    ddateCreation datetime,
+    ddateCreation datetime default CURRENT_TIMESTAMP ,
     iPoints int,
     FOREIGN KEY (idNeed)REFERENCES TUser(TNeed),
     FOREIGN KEY (idEvent)REFERENCES TEvent(TEvent)
@@ -108,7 +109,7 @@ BEGIN
 END //
 DELIMITER ;
 
- DELIMITER //
+DELIMITER //
 CREATE PROCEDURE GetUsers()
 BEGIN
 	SELECT *  	FROM  TUser
@@ -227,3 +228,39 @@ END //
 DELIMITER ;
 
 
+
+DELIMITER //
+CREATE PROCEDURE CrearSesion(
+	IN idUser int
+)
+BEGIN
+insert into TSesion(idUser)values(idUser);
+END //
+DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE CreateComment(
+	IN sComentario varchar(255),
+    IN idUser int,
+    IN idNeed int,
+    out nEstado bit
+)
+BEGIN
+	insert into TUserComment(sComentario,idUser,idNeed)
+    value(sComentario,idUser,idNeed);
+    set nEstado=1;
+END //
+DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE CreateComment(
+	IN sComentario varchar(255),
+    IN idUser int,
+    out nEstado bit
+)
+BEGIN
+	insert into TUserComment(sComentario,idUser)
+    value(sComentario,idUser);
+    set nEstado=1;
+END //
+DELIMITER ;
