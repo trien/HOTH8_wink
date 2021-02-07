@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 import Points from './points'
+import api from "../winkApi";
 
 import { makeStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
@@ -23,6 +24,14 @@ const useStyles = makeStyles((theme) => ({
 
 export default function AccountPage() {
   const classes = useStyles();
+
+  const [points, setPoints] = useState(0);
+  useEffect(() => {
+    api.getPoints(points => {
+      setPoints(points)
+    })
+  }, []);
+
   return (
     <List>
     <Card className={classes.root}>
@@ -44,7 +53,7 @@ export default function AccountPage() {
               </Typography>
             </Grid>
             <Grid item xs={12}>
-              <Points nb="14" desc="You earned with your participation"/>
+              <Points nb={points} desc="You earned with your participation"/>
             </Grid>
 
             <Grid item xs={12}>

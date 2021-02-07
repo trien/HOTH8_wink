@@ -1,6 +1,7 @@
 import React from 'react';
 import Page from '../components/page';
 import Leaderboard from '../components/leaderboard';
+import EmojiEventsIcon from '@material-ui/icons/EmojiEvents';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -20,6 +21,7 @@ export default function LeaderboardPage() {
   return (
     <React.Fragment>
         <Page title="Leaderboard">
+          <EmojiEventsIcon  style={{ fontSize: 40 }} />
             <div className={classes.root}>
                 <Leaderboard></Leaderboard>
             </div>

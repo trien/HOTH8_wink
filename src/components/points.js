@@ -7,13 +7,14 @@ import Tooltip from '@material-ui/core/Tooltip';
 
 import AlbumIcon from '@material-ui/icons/Album';
 export default function Page(props) {
-const direction = props.d ||''
+    const direction = props.d ||''
+    const nb = props.nb || '0'
 return (
     <React.Fragment>
         <Grid item>
             {props.desc && <small>{props.desc}</small>}&nbsp;
-            <Tooltip title={direction + ' '+ props.nb + ' points'}>
-                <Badge badgeContent={props.nb} color="primary">
+            <Tooltip title={direction + ' '+ nb + ' points'}>
+                <Badge badgeContent={nb} color="primary">
                     <AlbumIcon />
                 </Badge>
             </Tooltip>

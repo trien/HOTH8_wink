@@ -7,6 +7,7 @@ import Fab from '@material-ui/core/Fab';
 import Link from '@material-ui/core/Link';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import EmojiEventsIcon from '@material-ui/icons/EmojiEvents';
+import AlbumIcon from '@material-ui/icons/Album';
   
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -24,7 +25,12 @@ const useStyles = makeStyles((theme) => ({
     },
     leaderboard: {
         position: 'absolute',
-        top: theme.spacing(12),
+        top: theme.spacing(11),
+        right: theme.spacing(2),
+    },
+    points: {
+        position: 'absolute',
+        top: theme.spacing(20),
         right: theme.spacing(2),
     },
 }));
@@ -38,20 +44,29 @@ const useStyles = makeStyles((theme) => ({
   const goToMain = (event) => goToPage(event, 'main')
   const goToLeaderboard = (event) => goToPage(event, 'leaderboard')
   const goToAccount = (event) => goToPage(event, 'account')
+  const goToPoints = (event) => goToPage(event, 'points')
     return (
         <header className="App-header" >
           <nav className={classes.root}>
             <Link href="#" onClick={goToMain} className={classes.logo}>
                 <img src={logo} className="App-logo" alt="logo" />
             </Link>
-            <Link href="#" onClick={goToLeaderboard}>
-            <Fab color="primary" aria-label="leaderboard" className={classes.leaderboard}>
+            
+            <Link href="#" onClick={goToAccount} className={classes.account}>
+            <Fab color="primary" aria-label="account" >
+                <AccountCircleIcon />
+            </Fab>
+            </Link>
+
+            <Link href="#" onClick={goToLeaderboard} className={classes.leaderboard}>
+            <Fab color="primary" aria-label="leaderboard">
                 <EmojiEventsIcon />
             </Fab>
             </Link>
-            <Link href="#" onClick={goToAccount}>
-            <Fab color="primary" aria-label="account" className={classes.account}>
-                <AccountCircleIcon />
+
+            <Link href="#" onClick={goToPoints} className={classes.points}>
+            <Fab color="primary" aria-label="points">
+                <AlbumIcon />
             </Fab>
             </Link>
           </nav>

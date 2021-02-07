@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect  } from "react";
+import api from "../winkApi";
 import Item from './item'
 
 
 import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 
-import items from '../stub/event.json'
+// import items from '../stub/event.json'
 
 const gridStyles = makeStyles((theme) => ({
     root: {
@@ -26,7 +27,15 @@ const gridStyles = makeStyles((theme) => ({
 
 
 export default function ItemListCard() {
-const gClasses = gridStyles();
+
+  const [items, setItems] = useState([]);
+  const gClasses = gridStyles();
+  useEffect(() => {
+    api.getEvents((events) => {
+      setItems(events)
+    })
+  }, []);
+  
   return (
     <div className={gClasses.root}>
         <GridList cellHeight={500} className={gClasses.gridList}>

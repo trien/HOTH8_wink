@@ -22,6 +22,10 @@ import coffee from '../images/coffee.png'
 import feedback from '../images/feedback.png'
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    margin: theme.spacing(3),
+    width: '100%'
+  },
   media: {
     height: 0,
     paddingTop: '56.25%', // 16:9
@@ -52,8 +56,8 @@ const getUserInitial = (u) => u.sLastName.substr(0,1) + u.sFirstName.substr(0,1)
                 {getUserInitial(user)}
             </Avatar>
             }
-            title={<h2>{props.item.sNameEvent}</h2>}
-            subheader={props.item.dDateEvent}
+            title={<h2>{props.item.title}</h2>}
+            subheader={props.item.date}
         />
         {props.item.image && <CardMedia
             className={classes.media}
@@ -62,7 +66,7 @@ const getUserInitial = (u) => u.sLastName.substr(0,1) + u.sFirstName.substr(0,1)
         />}
         <CardContent>
             <Typography variant="body2" color="textSecondary" component="p">
-            {props.item.sInfoEvent}
+            {props.item.desc}
             </Typography>
         </CardContent>
         <CardActions disableSpacing>

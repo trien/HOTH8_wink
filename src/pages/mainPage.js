@@ -25,6 +25,7 @@ export default function MainPage() {
           </Card>
           <ItemForm />
           <ItemList />
+          <ItemForm />
         </Page>
     </React.Fragment>
   );
