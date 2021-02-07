@@ -1,10 +1,15 @@
 .App {
   text-align: center;
+  position: relative;
+  background-image: url(https://blush.design/_next/static/images/hero-bg-1817f519c98386e359fa75bcb86a4dfe.png.webp);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: fixed;
 }
 
 .App-logo {
   height: 40vmin;
-  height: 100px;
+  height: 150px;
   pointer-events: none;
 }
 
@@ -21,4 +26,13 @@
 
 .App-link {
   color: #61dafb;
+}
+header {
+  padding: 0;
+}
+header nav {
+  padding: 40px;
+}
+main {
+  background: #fff;
 }

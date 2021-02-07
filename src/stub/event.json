@@ -8,6 +8,14 @@
     },
     {
         "id": 2,
+        "sNameEvent": "I need help in the configuration page",
+        "sInfoEvent": "I got stuck on the website www.xxx.com when i try to access the configuration page. Do someone have the same issue ?",
+        "dDateEvent": "12-02-2021",
+        "idUser": 2,
+        "image": "feedback"
+    },
+    {
+        "id": 21,
         "sNameEvent": "CITY CARNVAL VIRTUAL MEETING",
         "sInfoEvent": "The event will start at 04:00 pm and everybody is invited",
         "dDateEvent": "12-02-2021",
@@ -26,5 +34,13 @@
         "sInfoEvent": "The event will start at 06:00 pm we have chocolate",
         "dDateEvent": "14-02-2021",
         "idUser": 4
+    },
+    {
+        "id": 5,
+        "sNameEvent": "Coffee time",
+        "sInfoEvent": "Let's have a coffee break! I miss having chillong chat with you",
+        "dDateEvent": "14-02-2021 4pm",
+        "idUser": 4,
+        "image": "coffee"
     }
 ]

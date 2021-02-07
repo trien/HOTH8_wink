@@ -6,14 +6,14 @@ import { makeStyles } from '@material-ui/core/styles';
 
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-      display: 'flex',
-      justifyContent: 'center',
-      '& > *': {
-        margin: theme.spacing(1),
-      },
+  root: {
+    display: 'flex',
+    justifyContent: 'center',
+    '& > *': {
+      margin: theme.spacing(1),
     },
-  }));
+  },
+}));
 
 export default function LeaderboardPage() {
   const classes = useStyles();

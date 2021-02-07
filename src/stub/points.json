@@ -1,15 +1,15 @@
 [
     {
-        "user": 1,
-        "count": 1
+        "user": 2,
+        "count": 22
     },
     {
-        "user": 2,
-        "count": 10
+        "user": 1,
+        "count": 14
     },
     {
         "user": 3,
-        "count": 2
+        "count": 8
     },
     {
         "user": 4,
