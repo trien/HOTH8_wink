@@ -109,6 +109,10 @@ if(!$db) {
             $response = $db->getPoints();
             $data = array_merge($data, $response);
         break;
+        case 'index':
+            echo file_get_contents('root.html');
+            exit;
+        break;
     }
     $db->close();
 }

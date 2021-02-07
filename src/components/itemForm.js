@@ -268,9 +268,9 @@ Reward : `;
                 size="large"
                 color="primary"
                 aria-label="large outlined primary button group"
-                onClick={() => saveForm()}
               >
-                <Button color="primary" variant="contained">
+                <Button color="primary" variant="contained"
+                onClick={() => saveForm()}>
                   <AssignmentReturnedIcon
                     style={{ fontSize: 40 }}
                   ></AssignmentReturnedIcon>
@@ -278,7 +278,7 @@ Reward : `;
                 <Button
                   color="primary"
                   variant="contained"
-                  onClick={() => showForm(false)}
+                  onClick={() => setShowForm(false)}
                   title="close"
                 >
                   <HighlightOffIcon style={{ fontSize: 40 }}></HighlightOffIcon>
